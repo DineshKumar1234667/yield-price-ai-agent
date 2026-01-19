@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Yield & Price Forecasting AI Agent</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f2f6f9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            background: white;
+            padding: 25px;
+            width: 350px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
+        }
+
+        h2 {
+            text-align: center;
+            color: #2c7a2c;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 8px;
+            margin: 8px 0 15px 0;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background: #2c7a2c;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #256b25;
+        }
+
+        .result {
+            margin-top: 20px;
+            padding: 15px;
+            background: #eafbea;
+            border-radius: 5px;
+            text-align: center;
+            font-size: 16px;
+            font-weight: bold;
+            color: #2c7a2c;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>🌾 Yield & Price Forecasting AI Agent</h2>
+
+    <label>Crop Name</label>
+    <input type="text" id="crop" placeholder="Eg: Rice, Wheat">
+
+    <label>Rainfall (mm)</label>
+    <input type="number" id="rainfall" placeholder="Eg: 120">
+
+    <label>Temperature (°C)</label>
+    <input type="number" id="temp" placeholder="Eg: 30">
+
+    <label>Soil Type</label>
+    <select id="soil">
+        <option>Clay</option>
+        <option>Sandy</option>
+        <option>Loamy</option>
+    </select>
+
+    <button onclick="predict()">Predict Yield & Price</button>
+
+    <div class="result" id="output">
+        Prediction will appear here
+    </div>
+</div>
+
+<script>
+function predict() {
+    let crop = document.getElementById("crop").value;
+    let rainfall = document.getElementById("rainfall").value;
+    let temp = document.getElementById("temp").value;
+
+    // Dummy prediction (later AI model connect pannalaam)
+    let yieldPrediction = (rainfall * 0.5 + temp * 2).toFixed(2);
+    let pricePrediction = (yieldPrediction * 3).toFixed(2);
+
+    document.getElementById("output").innerHTML =
+        "🌱 Predicted Yield: " + yieldPrediction + " tons/acre<br>" +
+        "💰 Predicted Price: ₹" + pricePrediction + " per quintal";
+}
+</script>
+
+</body>
+</html>
